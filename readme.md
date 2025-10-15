@@ -67,3 +67,5 @@ A nota final será composta pela soma dos seguintes critérios:
     - O que é o projeto.
     - Como executá-lo localmente (incluindo configuração de banco de dados e variáveis de ambiente).
     - **Uma seção dedicada à "Funcionalidade Extra", descrevendo o que foi implementado e por quê.**
+
+    
