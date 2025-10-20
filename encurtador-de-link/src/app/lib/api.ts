@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: "https://encurtadorlinkback-6txm.onrender.com",
 });
 
 export default api;
