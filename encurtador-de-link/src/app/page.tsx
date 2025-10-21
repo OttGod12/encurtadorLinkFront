@@ -2,13 +2,6 @@
 import { useEffect, useState } from "react";
 import api from "./lib/api";
 import { Button, Input, Card, Typography, Space, message, Tag } from "antd";
-import {
-  CopyOutlined,
-  EditOutlined,
-  DeleteOutlined,
-  CheckOutlined,
-  CloseOutlined,
-} from "@ant-design/icons";
 import LinkCard from "../components/LinkCard";
 
 const { Title, Text } = Typography;
@@ -31,13 +24,13 @@ export default function HomePage() {
 
   async function carregarLinks() {
     try {
-      const res = await api.get("/links");
+      const res = await api.get<Link[]>("/links");
       setLinks(res.data);
     } catch {
       message.error("Erro ao carregar links");
     }
   }
-
+ 
   useEffect(() => {
     carregarLinks();
   }, []);
@@ -48,7 +41,7 @@ export default function HomePage() {
     }
     setCarregando(true);
     try {
-      const res = await api.post("/links", { legenda, url_original: url });
+      const res = await api.post<Link>("/links", { legenda, url_original: url });
       message.success("Link encurtado com sucesso!");
       setLegenda("");
       setUrl("");
